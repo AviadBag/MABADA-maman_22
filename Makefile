@@ -3,7 +3,7 @@ SRC     := src
 INCLUDE := include
 
 CC       := gcc
-CC_FLAGS := -Wall -ansi -pedantic -ggdb
+CC_FLAGS := -Wall -ansi -pedantic -g -O0
 
 EXECUTABLE := myset.out
 
@@ -13,7 +13,7 @@ run: clean all
 	./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): ${SRC}/*.c
-	${CC} ${GCC} -o $@ -I${INCLUDE} $^
+	${CC} ${CC_FLAGS} -o $@ -I${INCLUDE} $^
 
 clean:
 	rm -f ${BIN}/*
