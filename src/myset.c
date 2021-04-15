@@ -13,7 +13,7 @@ int main()
     set s;
     empty_set(&s);
     read_set(&s, arr);
-    printf("%u\n", s);
+    print_set(s);
 
     return 0;
 }

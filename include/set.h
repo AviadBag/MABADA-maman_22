@@ -1,10 +1,11 @@
 #ifndef SET_H
 #define SET_H
 
-#include <stdint.h>
+#define SET_MEMBER_RANGE 128 /* How many different numbers can we insert? */
+#define BITMAP_CELLS_NUMBER (SET_MEMBER_RANGE / 8)
 
-typedef uint32_t set;
-typedef int8_t   set_member;
+typedef struct set { unsigned char bitmap[BITMAP_CELLS_NUMBER]; } set;
+typedef char set_member;
 
 /* Checks if a set is empty */
 int is_empty(set);
