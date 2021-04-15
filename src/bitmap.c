@@ -2,7 +2,7 @@
 
 static unsigned char bit_to_index(char bit)
 {
-    return SET_MEMBER_RANGE / bit;
+    return bit / SET_MEMBER_RANGE;
 }
 
 static unsigned char bit_to_offset(char bit)
