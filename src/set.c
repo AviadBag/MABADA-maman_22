@@ -29,7 +29,7 @@ set empty_set()
 
 void read_set(set *s, set_member *members)
 {
-    while (*members != -1)
+    while (*members != SET_MEMBERS_ARRAY_TERMINATING_NUMBER)
     {
         set_bit(s, *members);
         members++;

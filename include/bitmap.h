@@ -4,12 +4,12 @@
 #include "set.h"
 
 /* Sets the given bit in the given bitmap */
-void set_bit(set *, char);
+void set_bit(set *, set_member);
 
 /* Clears the given bit in the given bitmap */
-void clear_bit(set *, char);
+void clear_bit(set *, set_member);
 
 /* Returns the given bit from the given bitmap */
-char get_bit(set, char);
+unsigned char get_bit(set, set_member);
 
 #endif
