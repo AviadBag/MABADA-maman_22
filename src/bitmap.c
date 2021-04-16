@@ -2,12 +2,12 @@
 
 static unsigned char bit_to_index(char bit)
 {
-    return bit / SET_MEMBER_RANGE;
+    return bit / BITMAP_MEMBERS_PER_CELL;
 }
 
 static unsigned char bit_to_offset(char bit)
 {
-    return bit % SET_MEMBER_RANGE;
+    return bit % BITMAP_MEMBERS_PER_CELL;
 }
 
 void set_bit(set *s, char bit)

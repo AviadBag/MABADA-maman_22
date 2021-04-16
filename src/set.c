@@ -39,7 +39,7 @@ void read_set(set *s, set_member *members)
 void print_set(set s)
 {
     int counter = 0; /* How many members do we have in the set? */
-    int i;
+    set_member i;
 
     for (i = 0; i < SET_MEMBER_RANGE; i++)
     {
