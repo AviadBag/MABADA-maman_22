@@ -1,10 +1,14 @@
 #ifndef SET_H
 #define SET_H
 
-#include <stdint.h>
+#define SET_MEMBER_RANGE 128 /* How many different numbers can we insert? */
+#define BITMAP_CELLS_NUMBER (SET_MEMBER_RANGE / 8) /* Every bit is one possible member */
+#define BITMAP_MEMBERS_PER_CELL (SET_MEMBER_RANGE / BITMAP_CELLS_NUMBER)
 
-typedef uint32_t set;
-typedef int8_t   set_member;
+#define SET_MEMBERS_ARRAY_TERMINATING_NUMBER SET_MEMBER_RANGE
+
+typedef struct set { unsigned char bitmap[BITMAP_CELLS_NUMBER]; } set;
+typedef unsigned char set_member;
 
 /* Checks if a set is empty */
 int is_empty(set);
@@ -14,7 +18,7 @@ set empty_set();
 
 /*
  Replaces the given set with the given values.
- The values should be given in an array, with -1 at the end of the array.
+ The values should be given in an array, with SET_MEMBERS_ARRAY_TERMINATING_NUMBER at the end of the array.
 */
 void read_set(set*, set_member*);
 

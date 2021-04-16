@@ -9,11 +9,10 @@
 
 int main()
 {
-    set_member arr[] = {127, 0, 34, -1};
-    set s;
-    empty_set(&s);
+    set_member arr[] = {127, 0, 34, 43, 23, 34, SET_MEMBERS_ARRAY_TERMINATING_NUMBER};
+    set s = empty_set();
     read_set(&s, arr);
-    printf("%u\n", s);
+    print_set(s);
 
     return 0;
 }

@@ -1,15 +1,15 @@
 #ifndef BITMAP_H
 #define BITMAP_H
 
-#include <stdint.h>
+#include "set.h"
 
 /* Sets the given bit in the given bitmap */
-void set_bit(uint32_t*, int8_t);
+void set_bit(set *, set_member);
 
 /* Clears the given bit in the given bitmap */
-void clear_bit(uint32_t*, int8_t);
+void clear_bit(set *, set_member);
 
 /* Returns the given bit from the given bitmap */
-int8_t get_bit(uint32_t, int8_t);
+unsigned char get_bit(set, set_member);
 
 #endif
