@@ -17,10 +17,10 @@ void set_bit(set *s, set_member bit)
 
 void clear_bit(set *s, set_member bit)
 {
-    s->bitmap[bit_to_index(bit)] &= ~(1 << bit);
+    s->bitmap[bit_to_index(bit)] &= ~(1 << bit_to_offset(bit));
 }
 
 unsigned char get_bit(set s, set_member bit)
 {
-    return (s.bitmap[bit_to_index(bit)] & (1 << bit)) >> bit;
+    return (s.bitmap[bit_to_index(bit)] & (1 << bit_to_offset(bit))) >> bit_to_offset(bit);
 }
