@@ -72,6 +72,7 @@ void union_set(set set_a, set set_b, set *set_c)
 {
     /* I can't just say set_c = set_a, because it contains an array, which is a pointer. */
     copy_set(set_a, set_c);
+
     binary_or(set_b, set_c);
 }
 
@@ -79,6 +80,7 @@ void intersect_set(set set_a, set set_b, set *set_c)
 {
     /* I can't just say set_c = set_a, because it contains an array, which is a pointer. */
     copy_set(set_a, set_c);
+
     binary_and(set_b, set_c);
 }
 
@@ -101,4 +103,8 @@ void sub_set(set set_a, set set_b, set *set_c)
 
 void symdiff_set(set set_a, set set_b, set *set_c)
 {
+    /* I can't just say set_c = set_a, because it contains an array, which is a pointer. */
+    copy_set(set_a, set_c);
+
+    binary_xor(set_b, set_c);
 }
