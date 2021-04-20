@@ -38,3 +38,10 @@ void binary_and(set src, set *dest)
     for (i = 0; i < BITMAP_CELLS_NUMBER; i++)
         dest->bitmap[i] &= src.bitmap[i];
 }
+
+void binary_xor(set src, set *dest)
+{
+    int i;
+    for (i = 0; i < BITMAP_CELLS_NUMBER; i++)
+        dest->bitmap[i] ^= src.bitmap[i];
+}

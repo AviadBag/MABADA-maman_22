@@ -18,4 +18,7 @@ void binary_or(set, set *);
 /* Executes binary "and" on the second given set, using the first given set. */
 void binary_and(set, set *);
 
+/* Executes binary "xor" on the second given set, using the first given set. */
+void binary_xor(set, set *);
+
 #endif
