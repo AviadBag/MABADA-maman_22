@@ -98,3 +98,7 @@ void sub_set(set set_a, set set_b, set *set_c)
             set_bit(set_c, i);
     }
 }
+
+void symdiff_set(set set_a, set set_b, set *set_c)
+{
+}
