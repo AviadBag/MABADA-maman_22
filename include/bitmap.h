@@ -12,4 +12,7 @@ void clear_bit(set *, set_member);
 /* Returns the given bit from the given bitmap */
 unsigned char get_bit(set, set_member);
 
+/* Executes binary "or" on the second given set, using the first given set. */
+void binary_or(set, set *);
+
 #endif

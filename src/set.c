@@ -56,3 +56,20 @@ void print_set(set s)
     if (counter % PRINT__MEMBERS_PER_LINE != 0)
         printf("\n");
 }
+
+/* Copy's source into destination */
+static void copy_set(set source, set *destination)
+{
+    int i;
+    for (i = 0; i < BITMAP_CELLS_NUMBER; i++)
+    {
+        destination->bitmap[i] = source.bitmap[i];
+    }
+}
+
+void union_set(set set_a, set set_b, set *set_c)
+{
+    /* I can't just say set_c = set_a, because it contains an array, which is a pointer. */
+    copy_set(set_a, set_c);
+    binary_or(set_b, set_c);
+}

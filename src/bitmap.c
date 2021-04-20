@@ -24,3 +24,10 @@ unsigned char get_bit(set s, set_member bit)
 {
     return (s.bitmap[bit_to_index(bit)] & (1 << bit_to_offset(bit))) >> bit_to_offset(bit);
 }
+
+void binary_or(set src, set *dest)
+{
+    int i;
+    for (i = 0; i < BITMAP_CELLS_NUMBER; i++)
+        dest->bitmap[i] |= src.bitmap[i];
+}
