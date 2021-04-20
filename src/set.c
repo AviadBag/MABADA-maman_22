@@ -2,6 +2,7 @@
 #include "bitmap.h"
 #include <stdio.h>
 
+#define MEMBER_NOT_EXISTS 0
 #define MEMBER_EXISTS 1
 #define PRINT__MEMBERS_PER_LINE 16
 
@@ -79,4 +80,21 @@ void intersect_set(set set_a, set set_b, set *set_c)
     /* I can't just say set_c = set_a, because it contains an array, which is a pointer. */
     copy_set(set_a, set_c);
     binary_and(set_b, set_c);
+}
+
+void sub_set(set set_a, set set_b, set *set_c)
+{
+    int i;
+    set_member set_a_member; /* The current set_a member */
+    set_member set_b_member; /* The current set_b member */
+
+    *set_c = empty_set();
+
+    for (i = 0; i < BITMAP_CELLS_NUMBER * BITMAP_MEMBERS_PER_CELL; i++)
+    {
+        set_a_member = get_bit(set_a, i);
+        set_b_member = get_bit(set_b, i);
+        if (set_a_member == MEMBER_EXISTS && set_b_member == MEMBER_NOT_EXISTS)
+            set_bit(set_c, i);
+    }
 }

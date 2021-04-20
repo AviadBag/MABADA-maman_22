@@ -17,7 +17,7 @@ int main()
     printf("-----s2------\n");
     print_set(s2);
 
-    intersect_set(s1, s2, &s3);
+    sub_set(s1, s2, &s3);
     printf("-----s1+s2------\n");
     print_set(s3);
 
