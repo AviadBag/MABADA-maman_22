@@ -7,7 +7,8 @@
 
 #define SET_MEMBERS_ARRAY_TERMINATING_NUMBER SET_MEMBER_RANGE
 
-typedef struct set { unsigned char bitmap[BITMAP_CELLS_NUMBER]; } set;
+typedef unsigned char cell;
+typedef struct set { cell bitmap[BITMAP_CELLS_NUMBER]; } set;
 typedef unsigned char set_member;
 
 /* Checks if a set is empty */
@@ -31,7 +32,7 @@ void union_set(set set_a, set set_b, set* set_c);
 /* Puts the intersection of set_a and set_b in set_c */
 void intersect_set(set set_a, set set_b, set* set_c);
 
-/* Puts the subtraction of set_a and set_b in set_c */
+/* Puts the subtraction of set_a and set_b in set_c (set_a - set_b) */
 void sub_set(set set_a, set set_b, set* set_c);
 
 /* Puts the symetric diff of set_a and set_b in set_c */
